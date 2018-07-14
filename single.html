@@ -16,7 +16,7 @@
     <meta name="robots" content="index,follow">
     
     
-    <title>DevBlog - Personal Blog Template</title>
+    <title>$j_Blog</title>
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon/favicon.ico">
@@ -69,7 +69,7 @@
                    <div class="about-fixed">
                     
                      <div class="my-pic">
-                        <img src="images/pic/my-pic.png" alt="">
+                        <img src="images/blog/ansible_logo.png" alt="">
                         <a href="javascript:void(0)" class="collapsed" data-target="#menu" data-toggle="collapse"><i class="icon-menu menu"></i></a>
                          <div id="menu" class="collapse">
                            <ul class="menu-link">
@@ -85,8 +85,8 @@
                       <div class="my-detail">
                     	
                         <div class="white-spacing">
-                            <h1>Sumit Jaiswal</h1>
-                            <span>Devops Developer</span>
+                            <h1>Ansible Automation</h1>
+                            <span>RedHat</span>
                         </div> 
                        
                        <ul class="social-icon">
@@ -124,160 +124,371 @@
                                 
                                 <!-- Post Headline Start -->
                                 <div class="post-title">
-                                    <h1>How to make your company website based on bootstrap framework on localhost?</h1> 
+                                    <h1>Get Automating Infoblox DDI with Ansible</h1> 
                                    </div>
                                    <!-- Post Headline End -->
                                     
                                     
                                 <!-- Post Detail Start -->
                                 <div class="post-info">
-                                    <span>July 11, 2018 / by <a href="#" target="_blank">Sumit Jaiswal</a></span>
+                                    <span>July 13, 2018 by <a href="#" target="_blank">Sumit Jaiswal</a></span>
                                    </div>
                                    <!-- Post Detail End -->
                                     
                                     
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at quam at orci commodo hendrerit vitae nec eros. Vestibulum neque est, imperdiet nec tortor nec, tempor semper metus. <b>Cras vel tempus velit</b>, et accumsan nisi. Duis laoreet pretium ultricies. Curabitur rhoncus auctor nunc congue sodales. Sed posuere nisi ipsum, eget dignissim nunc dapibus eget. Aenean elementum <b><a href="javascript:void(0)" data-toggle="popover" data-placement="top" data-content="You can write any text here">Click me</a></b> sollicitudin sapien ut sapien fermentum aliquet mollis. Curabitur ac quam orci sodales quam ut tempor. <b data-toggle="tooltip" data-placement="top" title="You can write any text here.">Hover me</b> suspendisse, gravida in augue in, interdum bibendum dui. Suspendisse sit amet justo sit amet diam fringilla commodo. Praesent ac magna at metus malesuada tincidunt non ac arcu. Nunc gravida eu felis vel elementum. Vestibulum sodales quam ut tempor tempor. Donec sollicitudin sapien ut sapien fermentum, non ultricies nulla gravida.</p>
+                                    <p>Networking world is rapidly evolving, driven by trends in security, virtualization, cloud, SDN, IPv6 adoption, and the Internet of Things (IoT). These demands require advanced solutions for managing DNS, DHCP, and IP address management, critical network services collectively known as DDI. <b>Infoblox DDI</b>, can be used to simmer down network engineer tedious tasks via atomating <b data-toggle="tooltip" data-placement="top" title="Domain Name System">DNS</b>, <b data-toggle="tooltip" data-placement="top" title="Dynamic Host Configuration Protocol">DHCP</b> and <b data-toggle="tooltip" data-placement="top" title="IP Address Management">IPAM</b>.</p>
+									<p>Automating Infoblox DDI with <b><!-- <a href="javascript:void(0)" data-toggle="popover" data-placement="top" data-content="Best and Easiest IT configuration management, deployment, and orchestration tool." --> <a href="https://docs.ansible.com/">Ansible</a></b> can make an engineer/administrator a Networking Ninja. Ansible integrated Infoblox DDI modules starting from version <b>2.5</b>. </p>
+									<p>Ansible 2.5 supports <b data-toggle="tooltip" data-placement="top" title="Network, Network_View, Zone, Dns_View and Host_record.">5 modules</b><b>, lookup pluggin, and dynamic inventory script</b> and more modules and other required scripts are supposed to be added in Ansible future releases to support all the features supported by Infoblox DDI.</p>
                                     
                                 
                                 <!-- Post Image Start -->
                                 <div class="post-image margin-top-40 margin-bottom-40">
-                                   <img src="images/blog/1.jpg" alt="">
-                                   <p>Image source from <a href="#" target="_blank">Link</a></p>                                      
+                                   <img src="images/blog/Ansible-and-Infoblox.png" alt="">
+                                   <p>Image source from <a href="https://www.ansible.com/blog/infoblox-integration-in-ansible-2.5" target="_blank">Link</a></p>                                      
                                   </div>
                                   <!-- Post Image End -->
                                   
                                   
-                                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at quam at orci commodo hendrerit vitae nec eros. Vestibulum neque est, imperdiet nec tortor nec, tempor semper metus. Cras vel tempus velit, et accumsan nisi. Duis laoreet pretium ultricies. Curabitur rhoncus auctor nunc congue sodale Sed posuere nisi ipsum.</p>
+                                   <p>Without further ado, I'll now dive and work with Ansible yaml based playbooks to automate Infoblox using the 5 modules that I have talked earlier in the section. <i>(If confused about terms like playbook and yaml, kindly through basics of <a href="https://docs.ansible.com/">Ansible</a>.)</i></p>
                                    
-                                 
+                                 <p><b>Pre-requisites</b></p>
+                                <div class="list">
+                                 <ul>
+								   <li>Infoblox DDI Server</li>
+                                   <li>Ansible Version <b>2.5</b> installed on client</li>
+                                   <li>Infoblox Client installed on client</li>
+                                  </ul>
+                                 </div>
                                  
                                  <!-- Post Video Tutorial Start -->
-                                 <div class="video-box margin-top-40 margin-bottom-40">
+                                 <!-- <div class="video-box margin-top-40 margin-bottom-40">
                                   <div class="video-tutorial">
                                    <a class="video-popup" href="https://www.youtube.com/watch?v=O2Bsw3lrhvs" title="Video Tutorial">
                                    <img src="images/blog/4.jpg" alt="">
-                                   </a>                           
+                                   </a>
                                   </div>
                                  <p>Integrate video on magnific popup for fast page load.</p>
-                                </div>
+                                </div> -->
                                 <!-- Post Video Tutorial End -->
-                                
-                                  
+								
+                                   <div class="post-title">
+                                     <h2>How to implement?</h2> 
+                                    </div>
                                    
-                                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at quam at orci commodo hendrerit vitae nec eros. Vestibulum neque est, imperdiet nec tortor nec, tempor semper metus. Cras vel tempus velit, et accumsan nisi. Duis laoreet pretium ultricies. Curabitur rhoncus auctor nunc congue sodale Sed posuere nisi ipsum.</p>
                                    
-                                  
-                                  
-                                  <!-- Post Blockquote Start -->
-                                  <div class="post-quote margin-top-40 margin-bottom-40">
-                                    <blockquote>Design is not just what is look like, Design is how it's work.</blockquote>
-                                  </div>
-                                  <!-- Post Blockquote End -->
-                                  
-                                  
-                                   
-                                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at quam at orci commodo hendrerit vitae nec eros. Vestibulum neque est, imperdiet nec tortor nec, tempor semper metus. Cras vel tempus velit, et accumsan nisi. Duis laoreet pretium ultricies. Curabitur rhoncus auctor nunc congue sodale Sed posuere nisi ipsum.</p>
-                                   
+                                    <p>I'll follow a seqence to ultimately create a New Host Record via Ansible Playbooks in Infoblox DDI server and it as follows: </p>
+                                   <div class="list">
+                                    <ul>
+                                      <li>Create a New Network view via NIOS_NETWORK_VIEW module</li>
+                                      <li>Create a New DNS view via NIOS_DNS_VIEW module</li>
+                                      <li>Create a New Zone via NIOS_ZONE module</li>
+                                      <li>Create a New IPV4/V6 Network(range) via NIOS_NETWORK moduls</li>
+									  <li>Create a New Host Record using the IPV4/V6 address create in previous step via NIOS_HOST_RECORD moduls</li>
+                                     </ul>
+                                    </div>
                                  
-                                  
+								 <p>It's time to dive in and actually write some Ansible playbooks to perform action on Infoblox DDI server.</p>
+								 
+								 <p>First, off I have written the playbook example as to how we can go ahead and write Ansible playbook to create Network view. Infoblox Network view gives you Network insight which ultimately ensures that you can see every network asset with unmatched clarity, context, and insight—every device, IP address, and switch port. It consolidates all your core network infrastructure and service data into a single, comprehensive, authoritative database. The agility you gain through its extensive automation, centralized visibility, and integrated management capabilities empowers you to meet the evolving needs of your business, while reaping substantial savings in time and expense, to check more info about: <a href="https://www.infoblox.com/wp-content/uploads/infoblox-deployment-guide-core-ddi-basics-nios-8.pdf">Infoblox DDI</a></p>
+								 
+								 <h4>1. Ansible Playbook Nios_Network_View Example:</h4>
+                                      <!-- Post Coding (SyntaxHighlighter) Start -->
+                                      <div class="margin-top-40 margin-bottom-40">  
+                                       <pre class="brush: js"> 
+    								  /* Network_View module to create New Network_View */
+    								  ---
+    								  - name: Nios_Network_View
+    								    hosts: localhost
+    								    connection: local
+    								    vars:
+    								      nios_provider:
+    								        host: infoblox_server_ip_or_hostname
+    								        username: test
+    								        password: test
+    								    tasks:
+    								     - name: Create Nios Network_View
+    								       nios_network_view:
+    								        name: ansible-network-view
+    								        state: present
+    								        comment: test comment
+    								        provider: "{{ nios_provider }}"  
+                                         </pre>
+                                        </div>
+                                        <!-- Post Coding (SyntaxHighlighter) End -->
+								<p>Above playbook file will go ahead and create new network view in Infoblox DDI server with the name: <b><i>ansible-network-view</i></b>. As mentioned in the playbook here I am calling NIOS Network View Ansible module via the keyword <i>nios_network_view</i>, then I have given name to the new network view and I have kept state as <b>present</b> and it's because I have to create the netowrk view if I had to delete the network view I would have given state as <b>absent</b>, I'll not discuss in depth of generic Ansible Playbook modules as that will stretch beyond the scope of this article. And, lastly I have called provider which has the information of credentials needed to connect to Infoblox DDI server. Now, if I'll run this playbook new network view will get created in Infoblox DDI server</p>		
+								
+								<h4>Network_View Playbook Run Output:</h4>
+                                <div class="post-image margin-top-40 margin-bottom-40">
+                                   <img src="images/blog/network_view.png" alt="">                                     
+                                  </div>
+								
+                                <h4>2. Ansible Playbook Nios_Dns_View Example:</h4>  
                                   <!-- Post Coding (SyntaxHighlighter) Start -->
                                   <div class="margin-top-40 margin-bottom-40">  
                                    <pre class="brush: js">
-                                   /* Smooth Scroll */
-
-                                    $('a.smoth-scroll').on("click", function (e) {
-                                      var anchor = $(this);
-                                      $('html, body').stop().animate({
-                                      scrollTop: $(anchor.attr('href')).offset().top - 50
-                                      }, 1000);
-                                      e.preventDefault();
-                                     });
-				 
-                                   /* Scroll To Top */
-		
-                                   $(window).scroll(function(){
-                                     if ($(this).scrollTop() >= 500) {
-                                     $('.scroll-to-top').fadeIn();
-                                     } else {
-                                     $('.scroll-to-top').fadeOut();
-                                     }
-                                     });
-	
-	                               $('.scroll-to-top').click(function(){
-                                   $('html, body').animate({scrollTop : 0},800);
-                                   return false;
-                                    });
+                                   /* DNS view module to create New DNS */
+								   ---
+								   - name: Nios_Dns_View
+								     hosts: localhost
+								     connection: local
+								     vars:
+								       nios_provider:
+								         host: infoblox_server_ip_or_hostname
+								         username: test
+								         password: test
+								     tasks:
+								      - name: Create DNS View
+								        nios_dns_view:
+								          name: ansible-dns
+								          comment: test comment
+								          state: present
+								          provider: "{{ nios_provider }}"
                                   </pre>
                                  </div>
                                  <!-- Post Coding (SyntaxHighlighter) End -->
-                                 
-                                  
-                                  
-                                  <div class="post-title">
-                                    <h2>How to implement?</h2> 
-                                   </div>
-                                   
-                                   
-                                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at quam at orci commodo hendrerit vitae nec eros. Vestibulum neque est, imperdiet nec tortor nec, tempor semper metus. Cras vel tempus velit, et accumsan nisi. Duis laoreet pretium ultricies. Curabitur rhoncus auctor nunc congue sodale Sed posuere nisi ipsum.</p>
-                                   
-                                     
-                                  
-                                  
+                                 <p>This playbook example will go ahead and create new DNS view in Infoblox DDI server with the name: <b><i>ansible-dns</i></b>. As, you can follow from previous playbook example that here I am calling NIOS DNS View Ansible module via the keyword <i>nios_dns_view</i>. Now, if I'll run this playbook new DNS view will get created in Infoblox DDI server</p>
+  								<h4>DNS_View Playbook Run Output:</h4>
+                                  <div class="post-image margin-top-40 margin-bottom-40">
+                                     <img src="images/blog/dns_view.png" alt="">                                     
+                                    </div>
+								   
+								  <h4>3. Ansible Playbook Nios_Zone Example:</h4>  
+                                  <!-- Post Coding (SyntaxHighlighter) Start -->
+                                  <div class="margin-top-40 margin-bottom-40">  
+                                   <pre class="brush: js"> 
+								  /* Zone module to create New Zone */
+								  ---
+								  - name: Nios_Zone
+								    hosts: localhost
+								    connection: local
+								    vars:
+								      nios_provider:
+								        host: infoblox_server_ip_or_hostname
+								        username: test
+								        password: test
+								    tasks:
+								     - name: Create Nios Zone
+								       nios_zone:
+								        name: ansible.com
+								        state: present
+								        comment: test comment
+								        provider: "{{ nios_provider }}"  
+                                     </pre>
+                                    </div>
+                                    <!-- Post Coding (SyntaxHighlighter) End --> 
+                                   <p>I hope now you get the hang of how I am writing these playbooks, this playbook example will go ahead and create new Zone in Infoblox DDI server with the name: <b><i>ansible.com</i></b>. Here I am calling NIOS Zone Ansible module via the keyword <i>nios_zone</i>. Upon running this playbook new Zone view will get created in Infoblox DDI server</p>
+    								<h4>Zone Playbook Run Output:</h4>
+                                    <div class="post-image margin-top-40 margin-bottom-40">
+                                       <img src="images/blog/zone.png" alt="">                                     
+                                      </div>
+								   <p>In the above playbook run output, you can see in playbook recap section that <b>ok=1</b>, but <b>changed=0</b> and this is because <b>ansible.com</b> is already present in Infoblox DDI server and this is because of Ansible idempotencey feature where Ansible will not try to change/overwrite to already existing objects.</p>
+								  
+								  <h4>4. Ansible Playbook Nios_Network Example:</h4>
+                                  <!-- Post Coding (SyntaxHighlighter) Start -->
+                                  <div class="margin-top-40 margin-bottom-40">  
+                                   <pre class="brush: js"> 
+								  /* Network module to create New Network */
+								  ---
+								  - name: Nios_Network
+								    hosts: localhost
+								    connection: local
+								    vars:
+								      nios_provider:
+								        host: infoblox_server_ip_or_hostname
+								        username: test
+								        password: test
+								    tasks:
+								     - name: Create Nios Network
+								       nios_network:
+										 network: 192.168.10.0/24
+									     state: present
+								         comment: test comment
+								         provider: "{{ nios_provider }}"  
+                                     </pre>
+                                    </div>
+                                    <!-- Post Coding (SyntaxHighlighter) End -->
+									<p>This playbook example will create new Network with IPV4 address with a range from 0-24 via <b>192.168.10.0/24</b>. Here I am calling NIOS Network Ansible module via the keyword <i>nios_network</i>. Upon running this playbook Network with mentioned IPV4 address will get created in Infoblox DDI server. Also, in here I have taken example to create IPV4 address but from Ansible <b>2.6</b> onwards IPV6 address is also supported.</p>
+									
+    								<h4>Network Playbook Run Output:</h4>
+                                    <div class="post-image margin-top-40 margin-bottom-40">
+                                       <img src="images/blog/network.png" alt="">                                     
+                                      </div>
+									  
+									  <h4>5. Ansible Playbook Nios_Host_Record Example:</h4>
+	                                  <!-- Post Coding (SyntaxHighlighter) Start -->
+	                                  <div class="margin-top-40 margin-bottom-40">  
+	                                   <pre class="brush: js"> 
+									  /* Host Record module to create New Host_Record */
+									  ---
+									  - name: Nios_Host_Record
+									    hosts: localhost
+									    connection: local
+									    vars:
+									      nios_provider:
+									        host: infoblox_server_ip_or_hostname
+									        username: test
+									        password: test
+									    tasks:
+									     - name: Create Nios Host_Record
+									       nios_host_record:
+									        name: new_host.ansible.com
+											ipv4:
+											  - address: 192.168.10.1
+									        state: present
+									        comment: test comment
+									        provider: "{{ nios_provider }}"  
+	                                     </pre>
+	                                    </div>
+	                                    <!-- Post Coding (SyntaxHighlighter) End -->
+										
+	    								<h4>Host Record Playbook Run Output:</h4>
+	                                    <div class="post-image margin-top-40 margin-bottom-40">
+	                                       <img src="images/blog/host_record.png" alt="">                                     
+	                                      </div>
+										
+									  <h3>Lookup Pluggins</h3>
+									  <p></p>
+									  <h4><br />-> Playbook Example for Next Available IP:</h4>
+	                                  <!-- Post Coding (SyntaxHighlighter) Start -->
+	                                  <div class="margin-top-40 margin-bottom-40">  
+	                                   <pre class="brush: js"> 
+									  /* Use Lookup pluggin to Get Next available IP*/
+									  ---
+									  - name: Get Next Available IP
+									    hosts: localhost
+									    connection: local
+									    vars:
+									      nios_provider:
+									        host: infoblox_server_ip_or_hostname
+									        username: test
+									        password: test
+									    tasks:
+									    - name: get next available ip
+									      set_fact:
+									        ipaddr: "{{ lookup('nios_next_ip', '192.168.10.0/24', provider=nios_provider) }}"
+	                                     </pre>
+	                                    </div>
+	                                    <!-- Post Coding (SyntaxHighlighter) End -->
+	    								<h4>Next Available IP Playbook Run Output:</h4>
+	                                    <div class="post-image margin-top-40 margin-bottom-40">
+	                                       <img src="images/blog/next_ip.png" alt="">                                     
+	                                      </div>
+										<p>As you can see the playbook output shows that the next availble IP in IPV4 network range of <b>192.168.10.0/24</b> is the ipaddress <b>192.168.10.2</b> and this is because we already have a host record <i>new_host.ansible.com</i> at ipaddr <i>192.168.10.1</i>. This use case is very helpful for network administrator who can directly rely on Ansible + Infoblox IPAM to get the precised and correct result everytime they run the above playbook and this ulitmately remove the dependency of maintaining tedious spreadsheet of the network IP's.</p>
+										
+									  <br />	
+									  <h4>-> Playbook Example for Searching Available Host Record:</h1>	
+  	                                  <!-- Post Coding (SyntaxHighlighter) Start -->
+  	                                  <div class="margin-top-40 margin-bottom-40">  
+  	                                   <pre class="brush: js"> 
+  									  /* Use Lookup pluggin to Search for Host Records*/
+  									  ---
+  									  - name: Search from Input Host Record info
+  									    hosts: localhost
+  									    connection: local
+  									    vars:
+  									      nios_provider:
+  									        host: infoblox_server_ip_or_hostname
+  									        username: test
+  									        password: test
+										tasks:
+										  - name: search and get the host_record info
+										    set_fact:
+										      ipaddr: "{{ lookup('nios', 'record:host', filter={'name':'new_host.ansible.com'}, provider=nios_provider) }}"
+  	                                     </pre>
+  	                                    </div>
+  	                                    <!-- Post Coding (SyntaxHighlighter) End -->
+	    								<h4>Search Host Record Playbook Run Output:</h4>
+	                                    <div class="post-image margin-top-40 margin-bottom-40">
+	                                       <img src="images/blog/search_host.png" alt="">                                     
+	                                      </div>
+										  <p>As per the playbook output, user can get all the information with respect to searched Host record which can hep a network administrator in book keeping things.</p>
+										
+										
+										<!-- <h3>Ansible Infoblox Dynamic Inventory</h3>
+										<p><br />Ansible dynamic inventory scripts allow import of inventory from another source like Cobbler, AWS or in this case Infoblox NIOS. You can read more about dynamic inventory on the Ansible dynamic inventory<a href="https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html">ansible documentation page</a></p>
+										<p>There are two files that need to be located under the contrib/inventory/ in the Ansible project:</p>
+		                                <div class="list">
+		                                 <ul>
+										   <li>infoblox.yaml - specifies the provider arguments and optional filters</li>
+		                                   <li>infoblox.py - python script that retrieves inventoryt</li>
+		                                  </ul>
+		                                 </div>
+										 <p>Update the infoblox.yaml with your login information to the NIOS instance. This includes the username, password and an IP address or hostname. Make sure the infoblox.yaml file is located in /etc/ansible/infoblox.yaml.</p> -->
+										 
+    	                                  <!-- Post Coding (SyntaxHighlighter) Start -->
+    	                                  <!-- <div class="margin-top-40 margin-bottom-40">
+    	                                   <pre class="brush: js">
+    									  /* Use Lookup pluggin to Search for Host Records*/
+    									  ---
+    									  - name: Search all Input Host Record info
+    									    hosts: all
+											gather_facts: false
+											tasks:
+											  - name: list all hosts
+											    debug:
+											    var: inventory_hostname
+											    delegate_to: localhost
+    	                                     </pre>
+    	                                    </div> -->
+    	                                    <!-- Post Coding (SyntaxHighlighter) End -->
+								  
                                   <!-- Post Image Gallery Start -->
-                                  <div class="row margin-top-40 margin-bottom-40">
-                                 
+                                  <!-- <div class="row margin-top-40 margin-bottom-40">
+
                                     <div class="col-md-4 col-sm-6 col-xs-12">
                                       <a href="images/blog/7.jpg" class="image-popup" title="image Title">
                                       <img src="images/blog/7.jpg" class="img-responsive" alt="">
                                      </a>
                                     </div>
-                    
+
                                     <div class="col-md-4 col-sm-6 col-xs-12">
                                       <a href="images/blog/5.jpg" class="image-popup" title="image Title">
                                       <img src="images/blog/5.jpg" class="img-responsive" alt="">
                                      </a>
                                     </div>
-                    
+
                                    <div class="col-md-4 col-sm-6 col-xs-12">
                                      <a href="images/blog/6.jpg" class="image-popup" title="image Title">
                                      <img src="images/blog/6.jpg" class="img-responsive" alt="">
                                     </a>
                                    </div>
-                                
-                                 </div>
+
+                                 </div> -->
                                  <!-- Post Image Gallery End -->
                                  
-                                
+                                <!-- Post Blockquote Start -->
+                                <div class="post-quote margin-top-40 margin-bottom-40">
+                                  <blockquote>You're either the one that creates the automation or you're getting automated. <b> - Tom Preston</b></blockquote>
+                                </div>
+                                <!-- Post Blockquote End -->
                                 
                                   <div class="post-title">
                                     <h2>Make it more awesome</h2> 
                                    </div>
                                    
                                    
-                                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at quam at orci commodo hendrerit vitae nec eros. Vestibulum neque est.</p>
+                                   <p>Now, as you have got the basic understanding of Ansible + Infoblox DDI integration next step at the ladder would be exploring other options exposed by Ansible with respective to Infoblox DDI and mae the modt of Netowrk automation.</p>
                                  
                                    
                                   
                                   <!-- Post Blockquote (Italic Style) Start -->
                                   <blockquote class="margin-top-40 margin-bottom-40">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at quam at orci commodo hendrerit vitae nec eros. Vestibulum neque est, imperdiet nec tortor nec, tempor semper metus. Cras vel tempus velit, <b>et accumsan nisi</b>. Duis laoreet pretium ultricies. Curabitur rhoncus auctor nunc congue sodale Sed posuere nisi ipsum.</p>
+                                    <p>Ansible is <i>Lingua Franca</i> of enterprise which means it's a universal language adopted at enterprise level and a language to communicate and facilitate Dev and OPS ~ DevOps. <b>Networking Ninja</b>, this is what Ansible and Infoblox DDI integration makes a Network Engineer and also helps enterprise to achieve round the clock Network DNS, DHCP and IPAM automation.</p>
                                    </blockquote>
-                                   <!-- Post Blockquote (Italic Style) End -->
                                    
-                                   
-                                  
-                                  
-                                  <div class="post-title">
-                                    <h2>Learn to check all the features</h2> 
+								   
+								   <!-- Post Blockquote (Italic Style) End -->
+                                   <!-- <div class="post-title">
+                                    <h2>Learn to check all the features</h2>
                                    </div>
-                                   
-                                   
-                                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at quam at orci commodo hendrerit vitae nec eros. Vestibulum neque est.</p>
-                                 
-                                   
-                                  
+
+
+                                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at quam at orci commodo hendrerit vitae nec eros. Vestibulum neque est.</p> -->
+
+
+
                                   <!-- Post List Style Start -->
-                                  <div class="list">
+                                  <!-- <div class="list">
                                    <ul>
                                      <li>Ready to use Blog Template</li>
                                      <li>It have all the necessary features which you need to run blog</li>
@@ -285,8 +496,8 @@
                                      <li>Speed Optimization</li>
                                     </ul>
                                    </div>
-                                   
-                                   
+
+
                                   <div class="list list-style margin-top-40">
                                    <ul>
                                      <li>Ready to use Blog Template</li>
@@ -295,15 +506,15 @@
                                      <li>Speed Optimization</li>
                                     </ul>
                                    </div>
-                                   
-                                   
+
+
                                   <div class="list list-style-2 margin-top-40">
                                    <ul>
                                      <li>Ready to use Blog Template</li>
                                      <li>It have all the necessary features which you need to run blog</li>
                                      <li>Neat and Clean Typography</li>
                                      <li>Speed Optimization</li>
-                                    </ul>
+                                    </ul> -->
                                    </div>
                                    <!-- Post List Style End -->
 
@@ -312,14 +523,14 @@
                                   
                                   <!-- Post Author Bio Box Start -->
                                   <div class="about-author margin-top-70 margin-bottom-50">
-                                    
+
                                     <div class="picture">
                                       <img src="images/blog/author.png" class="img-responsive" alt="">
                                      </div>
-                                   
+
                                     <div class="c-padding">
                                        <h3>Article By <a href="#" target="_blank" data-toggle="tooltip" data-placement="top" title="Visit Sumit Website">Sumit Jaiswal</a></h3>
-                                       <p>You can use about author box when someone guest post on your blog, Lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ad minim veniam.</p>
+                                       <p>Currently works @ Ansible by Redhat as SSE.</p>
                                       </div>
                                     </div>
                                     <!-- Post Author Bio Box End -->
@@ -328,24 +539,24 @@
                                     
                                     
                                   <!-- You May Also Like Start -->
-                                  <div class="you-may-also-like margin-top-50 margin-bottom-50">
+                                  <!-- <div class="you-may-also-like margin-top-50 margin-bottom-50">
                                     <h3>You may also like</h3>
                                      <div class="row">
-                                 
+
                                     <div class="col-md-4 col-sm-6 col-xs-12">
                                       <a href="single.html"><p>Make mailchimp singup form working with ajax using jquery plugin</p></a>
                                      </div>
-                    
+
                                     <div class="col-md-4 col-sm-6 col-xs-12">
                                       <a href="single.html"><p>How to design elegant e-mail newsletter in html for wish christmas to your subscribers?</p></a>
                                      </div>
-                    
+
                                     <div class="col-md-4 col-sm-6 col-xs-12">
                                       <a href="single.html"><p>How to customize a wordpress theme entirely from scratch using a child theme?</p></a>
                                      </div>
-                                    
+
                                     </div>
-                                  </div>
+                                  </div> -->
                                   <!-- You May Also Like End -->
                                     
                                    
@@ -444,10 +655,10 @@
     
      
      <!-- Endpage Box (Popup When Scroll Down) Start -->
-     <div id="scroll-down-popup" class="endpage-box">
+     <!-- <div id="scroll-down-popup" class="endpage-box">
        <h4>Read Also</h4>
        <a href="#">How to make your company website based on bootstrap framework...</a>
-      </div>
+      </div> -->
       <!-- Endpage Box (Popup When Scroll Down) End -->
       
     
