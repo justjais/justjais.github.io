@@ -326,12 +326,18 @@ button {
 }
 
 .my-pic {
-    width: 100%;
-    box-shadow: -2px -1px 88px 0px rgba(0,0,0,0.17);
+	padding-top: 50px;
+	margin:0 auto;
+	width: 300px;
+	justify-content: center;
+	/*border-radius: 50%;*/
+    /*width: 50%;*/
+    /*box-shadow: -2px -1px 88px 0px rgba(0,0,0,0.17);*/
 }
 
 .my-pic img {
-    width: 100%;
+	border-radius: 50%;
+    width: 40%;
 }
 
 .my-detail {
