@@ -27,8 +27,7 @@
  * You should have received a copy of the GNU General Public License
  * along with SyntaxHighlighter.  If not, see <http://www.gnu.org/copyleft/lesser.html>.
  */
-SyntaxHighlighter.brushes.Plain = function()
-{
+SyntaxHighlighter.brushes.Plain = function () {
 };
 
 SyntaxHighlighter.brushes.Plain.prototype = new SyntaxHighlighter.Highlighter();

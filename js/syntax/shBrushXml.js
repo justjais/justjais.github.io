@@ -27,26 +27,22 @@
  * You should have received a copy of the GNU General Public License
  * along with SyntaxHighlighter.  If not, see <http://www.gnu.org/copyleft/lesser.html>.
  */
-SyntaxHighlighter.brushes.Xml = function()
-{
-	function process(match, regexInfo)
-	{
+SyntaxHighlighter.brushes.Xml = function () {
+	function process(match, regexInfo) {
 		var constructor = SyntaxHighlighter.Match,
 			code = match[0],
 			tag = new XRegExp('(&lt;|<)[\\s\\/\\?]*(?<name>[:\\w-\\.]+)', 'xg').exec(code),
 			result = []
 			;
-		
-		if (match.attributes != null) 
-		{
+
+		if (match.attributes != null) {
 			var attributes,
 				regex = new XRegExp('(?<name> [\\w:\\-\\.]+)' +
-									'\\s*=\\s*' +
-									'(?<value> ".*?"|\'.*?\'|\\w+)',
-									'xg');
+					'\\s*=\\s*' +
+					'(?<value> ".*?"|\'.*?\'|\\w+)',
+					'xg');
 
-			while ((attributes = regex.exec(code)) != null) 
-			{
+			while ((attributes = regex.exec(code)) != null) {
 				result.push(new constructor(attributes.name, match.index + attributes.index, 'color1'));
 				result.push(new constructor(attributes.value, match.index + attributes.index + attributes[0].indexOf(attributes.value), 'string'));
 			}
@@ -59,13 +55,13 @@ SyntaxHighlighter.brushes.Xml = function()
 
 		return result;
 	}
-	
+
 	this.regexList = [
-		{ regex: new XRegExp('(\\&lt;|<)\\!\\[[\\w\\s]*?\\[(.|\\s)*?\\]\\](\\&gt;|>)', 'gm'),			css: 'color2' },	// <![ ... [ ... ]]>
-		{ regex: SyntaxHighlighter.regexLib.xmlComments,												css: 'comments' },	// <!-- ... -->
+		{ regex: new XRegExp('(\\&lt;|<)\\!\\[[\\w\\s]*?\\[(.|\\s)*?\\]\\](\\&gt;|>)', 'gm'), css: 'color2' },	// <![ ... [ ... ]]>
+		{ regex: SyntaxHighlighter.regexLib.xmlComments, css: 'comments' },	// <!-- ... -->
 		{ regex: new XRegExp('(&lt;|<)[\\s\\/\\?]*(\\w+)(?<attributes>.*?)[\\s\\/\\?]*(&gt;|>)', 'sg'), func: process }
 	];
 };
 
-SyntaxHighlighter.brushes.Xml.prototype	= new SyntaxHighlighter.Highlighter();
-SyntaxHighlighter.brushes.Xml.aliases	= ['xml', 'xhtml', 'xslt', 'html'];
+SyntaxHighlighter.brushes.Xml.prototype = new SyntaxHighlighter.Highlighter();
+SyntaxHighlighter.brushes.Xml.aliases = ['xml', 'xhtml', 'xslt', 'html'];
