@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sumit Jaiswal's Tech Blog</title>
+    <link>https://justjais.github.io</link>
+    <atom:link href="https://justjais.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Technical blog covering Ansible, Python, DevOps, and automation topics by Sumit Jaiswal.</description>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Jan 2026 12:00:00 +0530</lastBuildDate>
+    
+    <!-- Blog Post 1: Ansible and Infoblox -->
+    <item>
+      <title>Automating Infoblox DDI with Ansible</title>
+      <link>https://justjais.github.io/ansible_infoblox.html</link>
+      <guid isPermaLink="true">https://justjais.github.io/ansible_infoblox.html</guid>
+      <pubDate>Fri, 13 Jul 2018 10:00:00 +0530</pubDate>
+      <description>Learn how to automate Infoblox DDI (DNS, DHCP, and IPAM) using Ansible. This comprehensive guide covers network automation, playbook examples, and lookup plugins for enterprise network management.</description>
+    </item>
+    
+    <!-- Blog Post 2: Managing Multiple Python Versions -->
+    <item>
+      <title>Manage Multiple Python Versions: The Easy Way!</title>
+      <link>https://justjais.github.io/python_venv.html</link>
+      <guid isPermaLink="true">https://justjais.github.io/python_venv.html</guid>
+      <pubDate>Sat, 27 Jul 2019 10:00:00 +0530</pubDate>
+      <description>A practical guide to managing multiple Python versions on your system using pyenv and virtual environments for clean, isolated development.</description>
+    </item>
+    
+    <!-- Blog Post 3: Ansible Virtual Environment -->
+    <item>
+      <title>Setting Up Ansible in a Virtual Environment</title>
+      <link>https://justjais.github.io/ansible_venv.html</link>
+      <guid isPermaLink="true">https://justjais.github.io/ansible_venv.html</guid>
+      <pubDate>Mon, 15 Jul 2019 10:00:00 +0530</pubDate>
+      <description>Step-by-step tutorial on setting up Ansible inside a Python virtual environment for isolated and reproducible automation workflows.</description>
+    </item>
+    
+    <!-- Blog Post 4: Docker -->
+    <item>
+      <title>Getting Started with Docker</title>
+      <link>https://justjais.github.io/docker.html</link>
+      <guid isPermaLink="true">https://justjais.github.io/docker.html</guid>
+      <pubDate>Wed, 01 Aug 2018 10:00:00 +0530</pubDate>
+      <description>Introduction to Docker containerization for developers. Learn container basics, Dockerfile creation, and container orchestration fundamentals.</description>
+    </item>
+    
+  </channel>
+</rss>

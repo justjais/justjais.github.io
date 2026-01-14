@@ -22,6 +22,10 @@
   <link rel="shortcut icon" href="images/favicon/favicon.ico">
   <link rel="apple-touch-icon" sizes="144x144" type="image/x-icon" href="images/favicon/apple-touch-icon.png">
 
+  <!-- RSS Feed -->
+  <link rel="alternate" type="application/rss+xml" title="Sumit Jaiswal's Blog"
+    href="https://justjais.github.io/feed.xml">
+
   <!-- All CSS Plugins -->
   <link rel="stylesheet" type="text/css" href="css/plugin.css">
 
@@ -122,114 +126,14 @@
 
 
 
-                  <!-- Intro Start -->
                   <div class="post-title margin-bottom-10">
-                    <h1>Looking for a <span class="main-color">online presence</span>?</h1>
-                  </div>
-
-                  <!-- <p>I am in the website field since 2004 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at quam at orci commodo hendrerit vitae nec eros. Vestibulum neque est, imperdiet nec tortor nec, tempor semper metus. <b>I am a developer</b>, et accumsan nisi. Duis laoreet pretium ultricies. Curabitur rhoncus auctor nunc congue sodales. Sed posuere nisi ipsum, eget dignissim nunc dapibus eget. Aenean elementum sollicitudin sapien ut sapien fermentum aliquet mollis. Curabitur ac quam orci sodales quam ut tempor.</p> -->
-                  <!-- Intro End -->
-
-
-
-                  <!-- Testimonials Start -->
-                  <!-- <div class="post-title margin-top-50">
-                                   <h2>I hope you've checked <a href="work.html" data-toggle="tooltip" data-placement="top" title="Check out my work.">my work</a>, Let's take a look on what other clients said about my work.</h2>
-                                   </div>
-
-
-                              <div class="row">
-
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                 <div class="testimonial-content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at quam at orci commodo hendrerit vitae nec eros. Vestibulum neque est, imperdiet nec tortor nec, tempor semper metus.</p>
-								    </div>
-
-								  <div class="testimonial-client-info">
-
-                                    <div class="testimonial-client client-thumb">
-								      <img src="images/testimonial/1.png" alt="Client testimonial">
-									</div>
-
-                                    <div class="client-text">
-									   <div class="client-name">Jhon Doe</div>
-									   <span>Rolling LTD, Founder</span>
-									</div>
-								  </div>
-                                 </div>
-
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                 <div class="testimonial-content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at quam at orci commodo hendrerit vitae nec eros. Vestibulum neque est, imperdiet nec tortor nec, tempor semper metus.</p>
-								    </div>
-
-								  <div class="testimonial-client-info">
-
-                                    <div class="testimonial-client client-thumb">
-								      <img src="images/testimonial/2.png" alt="Client testimonial">
-									</div>
-
-                                    <div class="client-text">
-									   <div class="client-name">Jhon Doe</div>
-									   <span>WebRes LTD, Founder</span>
-									</div>
-								  </div>
-                                 </div>
-
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                 <div class="testimonial-content">
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at quam at orci commodo hendrerit vitae nec eros. Vestibulum neque est, imperdiet nec tortor nec, tempor semper metus.</p>
-								    </div>
-
-								  <div class="testimonial-client-info">
-
-                                    <div class="testimonial-client client-thumb">
-								      <img src="images/testimonial/3.png" alt="Client testimonial">
-									</div>
-
-                                    <div class="client-text">
-									   <div class="client-name">Jhon Doe</div>
-									   <span>WeSoon LTD, Founder</span>
-									</div>
-								  </div>
-                                 </div>
-
-                                </div>-->
-                  <!-- Testimonials  End -->
-
-
-
-
-                  <!-- Contact Me Start -->
-                  <div class="post-title margin-top-70">
-                    <h1>Contact <span class="main-color">Me</span></h1>
+                    <h1>Please share your <span class="main-color">feedback</span>!</h1>
                   </div>
 
 
-                  <div class="row">
 
-                    <!-- <div class="col-md-4 col-sm-4">
-                                     <div class="contact-us-detail">
-                                      <i class="icon-screen-smartphone color-6"></i>
-                                      <p><a href="tel:+1234567890">+91-8431657007</a></p>
-                                    </div>
-                                   </div> -->
-
-                    <div class="col-md-4 col-sm-4">
-                      <div class="contact-us-detail">
-                        <i class="icon-envelope-open color-5"></i>
-                        <p><a href="mailto:justjais@gmail.com" data-config="contact-email">justjais@gmail.com</a></p>
-                      </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-4">
-                      <div class="contact-us-detail">
-                        <i class="icon-clock color-3"></i>
-                        <p>Mon - Fri 09:00 – 18:00</p>
-                      </div>
-                    </div>
-
-                  </div>
+                  <!-- Contact Form Section -->
+                  <!-- Email and hours info removed for cleaner design -->
 
 
                   <div class="row margin-top-30">
@@ -288,8 +192,57 @@
                         </form>
                       </div>
 
-                      <!-- AJAX Form Submission Script -->
+                      <!-- AJAX Form Submission Script with Spam Prevention -->
                       <script>
+                        // Spam prevention: Rate limiting configuration
+                        var COOLDOWN_HOURS = 24; // Hours between submissions from same browser
+                        var MAX_SUBMISSIONS_PER_DAY = 3; // Max submissions per day from same browser
+                        var STORAGE_KEY = 'contact_form_submissions';
+
+                        // Check if user can submit
+                        function canSubmit() {
+                          try {
+                            var data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{"submissions": [], "lastSubmit": 0}');
+                            var now = Date.now();
+                            var cooldownMs = COOLDOWN_HOURS * 60 * 60 * 1000;
+
+                            // Check cooldown from last submission
+                            if (data.lastSubmit && (now - data.lastSubmit) < cooldownMs) {
+                              var remainingHours = Math.ceil((cooldownMs - (now - data.lastSubmit)) / (60 * 60 * 1000));
+                              return { allowed: false, reason: 'Please wait ' + remainingHours + ' hour(s) before submitting again.' };
+                            }
+
+                            // Check daily submission limit
+                            var today = new Date().toDateString();
+                            var todaySubmissions = data.submissions.filter(function (s) {
+                              return new Date(s).toDateString() === today;
+                            });
+
+                            if (todaySubmissions.length >= MAX_SUBMISSIONS_PER_DAY) {
+                              return { allowed: false, reason: 'You have reached the daily submission limit. Please try again tomorrow.' };
+                            }
+
+                            return { allowed: true };
+                          } catch (e) {
+                            return { allowed: true }; // Allow if localStorage fails
+                          }
+                        }
+
+                        // Record submission
+                        function recordSubmission() {
+                          try {
+                            var data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{"submissions": [], "lastSubmit": 0}');
+                            data.submissions.push(Date.now());
+                            data.lastSubmit = Date.now();
+                            // Keep only last 30 days of data
+                            var thirtyDaysAgo = Date.now() - (30 * 24 * 60 * 60 * 1000);
+                            data.submissions = data.submissions.filter(function (s) { return s > thirtyDaysAgo; });
+                            localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+                          } catch (e) {
+                            // Ignore localStorage errors
+                          }
+                        }
+
                         document.getElementById('contact-form').addEventListener('submit', function (e) {
                           e.preventDefault();
 
@@ -297,6 +250,17 @@
                           var submitBtn = document.getElementById('submit-btn');
                           var formStatus = document.getElementById('form-status');
                           var originalBtnText = submitBtn.innerHTML;
+
+                          // Check rate limiting
+                          var submitCheck = canSubmit();
+                          if (!submitCheck.allowed) {
+                            formStatus.style.display = 'block';
+                            formStatus.style.backgroundColor = '#fff3cd';
+                            formStatus.style.color = '#856404';
+                            formStatus.style.border = '1px solid #ffc107';
+                            formStatus.innerHTML = '<i class="fa fa-clock-o"></i> <strong>Hold on!</strong> ' + submitCheck.reason;
+                            return false;
+                          }
 
                           // Show loading state
                           submitBtn.innerHTML = 'Sending...';
@@ -316,12 +280,13 @@
                           })
                             .then(function (response) {
                               if (response.ok) {
-                                // Success - show message and reset form
+                                // Success - record submission and show message
+                                recordSubmission();
                                 formStatus.style.display = 'block';
                                 formStatus.style.backgroundColor = '#d4edda';
                                 formStatus.style.color = '#155724';
                                 formStatus.style.border = '1px solid #c3e6cb';
-                                formStatus.innerHTML = '<i class="fa fa-check-circle"></i> <strong>Thank you!</strong> Your message has been sent successfully. I will get back to you soon!';
+                                formStatus.innerHTML = '<i class="fa fa-check-circle"></i> <strong>Thank you!</strong> Your message has been sent successfully.';
                                 form.reset();
                               } else {
                                 // Error from Formspree
@@ -354,18 +319,74 @@
 
 
 
-            <!-- Subscribe Form Start -->
+            <!-- Subscribe Form Start - Buttondown Integration -->
             <div class="col-md-8 col-md-offset-2">
-              <form id="mc-form" method="post"
-                action="http://uipasta.us14.list-manage.com/subscribe/post?u=854825d502cdc101233c08a21&amp;id=86e84d44b7">
+              <form id="newsletter-form" action="https://buttondown.email/api/emails/embed-subscribe/justjais"
+                method="post" target="popupwindow" onsubmit="return handleNewsletterSubmit(event);">
 
                 <div class="subscribe-form margin-top-20">
-                  <input id="mc-email" type="email" placeholder="Email Address" class="text-input">
-                  <button class="submit-btn" type="submit">Submit</button>
+                  <input id="newsletter-email" name="email" type="email" placeholder="Email Address" class="text-input"
+                    required>
+                  <button class="submit-btn" type="submit" id="newsletter-btn">Subscribe</button>
                 </div>
-                <p>Subscribe to my weekly newsletter</p>
-                <label for="mc-email" class="mc-label"></label>
+                <p>Subscribe to get notified about new blog posts</p>
+                <div id="newsletter-status" style="margin-top: 10px; text-align: center;"></div>
               </form>
+
+              <script>
+                function handleNewsletterSubmit(e) {
+                  e.preventDefault();
+
+                  var form = document.getElementById('newsletter-form');
+                  var emailInput = document.getElementById('newsletter-email');
+                  var submitBtn = document.getElementById('newsletter-btn');
+                  var statusDiv = document.getElementById('newsletter-status');
+                  var email = emailInput.value;
+
+                  // Validate email
+                  if (!email || !email.includes('@')) {
+                    statusDiv.innerHTML = '<span style="color: #dc3545;">Please enter a valid email address.</span>';
+                    return false;
+                  }
+
+                  // Show loading state
+                  submitBtn.innerHTML = 'Subscribing...';
+                  submitBtn.disabled = true;
+                  statusDiv.innerHTML = '';
+
+                  // Submit to Buttondown via fetch
+                  fetch('https://buttondown.email/api/emails/embed-subscribe/justjais', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: 'email=' + encodeURIComponent(email)
+                  })
+                    .then(function (response) {
+                      if (response.ok || response.status === 200 || response.status === 201) {
+                        // Success
+                        statusDiv.innerHTML = '<span style="color: #1abc9c;"><i class="fa fa-check-circle"></i> Thank you! Please check your email to confirm your subscription.</span>';
+                        emailInput.value = '';
+                      } else if (response.status === 409) {
+                        // Already subscribed
+                        statusDiv.innerHTML = '<span style="color: #ffc107;"><i class="fa fa-info-circle"></i> This email is already subscribed!</span>';
+                      } else {
+                        throw new Error('Subscription failed');
+                      }
+                    })
+                    .catch(function (error) {
+                      // Fallback: Open Buttondown in new window
+                      window.open('https://buttondown.email/justjais', 'popupwindow', 'scrollbars=yes,width=800,height=600');
+                      statusDiv.innerHTML = '<span style="color: #1abc9c;">A subscription window has opened. Please complete your subscription there.</span>';
+                    })
+                    .finally(function () {
+                      submitBtn.innerHTML = 'Subscribe';
+                      submitBtn.disabled = false;
+                    });
+
+                  return false;
+                }
+              </script>
 
             </div>
             <!-- Subscribe Form End -->
