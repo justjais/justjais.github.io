@@ -236,39 +236,44 @@
                     <div class="col-md-12">
 
                       <div class="row">
-                        <form id="contact-form" onsubmit="return sendEmail();">
+                        <!-- Formspree Integration -->
+                        <form id="contact-form" action="https://formspree.io/f/xjggvnzz" method="POST">
 
                           <div class="col-sm-6">
                             <div class="form-group">
-                              <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                              <input type="text" name="name" class="form-control" placeholder="Your Name" required>
                             </div>
                           </div>
 
                           <div class="col-sm-6">
                             <div class="form-group">
-                              <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                              <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                             </div>
                           </div>
 
                           <div class="col-sm-6">
                             <div class="form-group">
-                              <input type="text" id="address" class="form-control" placeholder="Where are You From?">
+                              <input type="text" name="location" class="form-control" placeholder="Where are You From?">
                             </div>
                           </div>
 
                           <div class="col-sm-6">
                             <div class="form-group">
-                              <input type="text" id="subject" class="form-control" placeholder="Subject" required>
+                              <input type="text" name="_subject" class="form-control" placeholder="Subject" required>
                             </div>
                           </div>
 
                           <div class="col-sm-12">
                             <div class="textarea-message form-group">
-                              <textarea id="message" class="textarea-message form-control" placeholder="Your Message"
+                              <textarea name="message" class="textarea-message form-control" placeholder="Your Message"
                                 rows="5" required></textarea>
                             </div>
                           </div>
 
+                          <!-- Formspree Configuration -->
+                          <input type="hidden" name="_next"
+                            value="https://justjais.github.io/contact.html?success=true">
+                          <input type="hidden" name="_captcha" value="true">
 
                           <div class="text-center">
                             <button type="submit" class="load-more-button">Send</button>
@@ -277,24 +282,17 @@
                         </form>
                       </div>
 
+                      <!-- Success Message (shown after form submission) -->
                       <script>
-                        function sendEmail() {
-                          var name = document.getElementById('name').value;
-                          var email = document.getElementById('email').value;
-                          var address = document.getElementById('address').value;
-                          var subject = document.getElementById('subject').value;
-                          var message = document.getElementById('message').value;
-
-                          // Construct the email body
-                          var body = 'Name: ' + name + '%0D%0A';
-                          body += 'Email: ' + email + '%0D%0A';
-                          body += 'Location: ' + address + '%0D%0A';
-                          body += '%0D%0AMessage:%0D%0A' + encodeURIComponent(message);
-
-                          // Open mailto link
-                          window.location.href = 'mailto:justjais@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
-
-                          return false; // Prevent form default submission
+                        if (window.location.search.includes('success=true')) {
+                          document.addEventListener('DOMContentLoaded', function () {
+                            var form = document.getElementById('contact-form');
+                            form.innerHTML = '<div class="text-center" style="padding: 40px;">' +
+                              '<i class="fa fa-check-circle" style="font-size: 60px; color: #1abc9c;"></i>' +
+                              '<h3 style="margin-top: 20px; color: #1abc9c;">Thank You!</h3>' +
+                              '<p>Your message has been sent successfully. I will get back to you soon!</p>' +
+                              '</div>';
+                          });
                         }
                       </script>
                     </div>
